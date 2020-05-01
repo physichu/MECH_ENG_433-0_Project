@@ -38,7 +38,7 @@
 void setPin(unsigned char address, unsigned char regist, unsigned char value);
 unsigned char readPin(unsigned char address, unsigned char regist);
 
-int main() {
+/*int main() {
 
     __builtin_disable_interrupts(); // disable interrupts while initializing things
 
@@ -113,7 +113,7 @@ int main() {
         //Wait 1 second
         while(_CP0_GET_COUNT() < 24000000/2){}
     }
-}
+}*/
 
 void i2c_master_setup(void) {
     // using a large BRG to see it on the nScope, make it smaller after verifying that code works
