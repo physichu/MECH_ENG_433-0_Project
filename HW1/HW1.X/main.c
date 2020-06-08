@@ -53,8 +53,6 @@ int main() {
     TRISBbits.TRISB4 = 1;
     LATAbits.LATA4 = 0;
     LATBbits.LATB4 = 1;
-    
-    __builtin_enable_interrupts();
 
     while (1) {
         if(PORTBbits.RB4==0){

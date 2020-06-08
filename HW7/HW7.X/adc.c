@@ -56,8 +56,6 @@ int main() {
     // disable JTAG to get pins back
     DDPCONbits.JTAGEN = 0;
     
-    __builtin_enable_interrupts();
-
     i2c_master_setup();        
     ssd1306_setup();    
     ws2812b_setup();
@@ -119,7 +117,8 @@ int main() {
         // light up a WS2812B proportionally according to the position touched
         if((touched_AN0 + touched_AN1) < (Baseline_AN0 + Baseline_AN1) -200){
             // (hue, sat, brightness) correspond to(Color in 360 degree, Full color or gray scale, brightness)
-        Brightness = 0.5*(Position + 50)/100;
+        Brightness = 0.5
+                *(Position + 50)/100;
             c[2] = HSBtoRGB(240, 0.5, Brightness);
             c[3] = HSBtoRGB(240, 0.5, 0);
         }else{
